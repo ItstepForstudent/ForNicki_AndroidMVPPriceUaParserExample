@@ -37,9 +37,9 @@ public  class Tab1 extends Fragment implements MainContract.view{
     ProgressBar progressBar;
 
 
-    void initRecycler(){
+    void initRecycler(View root){
         huckRVAdapter = new LifeHuckRVAdapter();
-        huchsRecyclerView = huchsRecyclerView.findViewById(R.id.rvLifeHucks);
+        huchsRecyclerView = root.findViewById(R.id.rvLifeHucks);
         huchsRecyclerView.setAdapter(huckRVAdapter);
         huchsRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }
@@ -79,26 +79,27 @@ public  class Tab1 extends Fragment implements MainContract.view{
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-
-
         }
         BaseApp.get(this.getContext()).getInjector().inject(this);
-        upadateBtn = upadateBtn.findViewById(R.id.btnUpd);
-
-        progressBar = progressBar.findViewById(R.id.indicator);
-        progressBar.setVisibility(View.GONE);
-
-        initRecycler();
-
-
-        presenter.onAttachView(this);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab1, container, false);
+        View root = inflater.inflate(R.layout.fragment_tab1, container, false);//inflate root view!!!!!!!!
+
+        upadateBtn = root.findViewById(R.id.btnUpd);
+
+        progressBar = root.findViewById(R.id.indicator);
+        progressBar.setVisibility(View.GONE);
+
+        initRecycler(root);
+
+
+        presenter.onAttachView(this);
+
+        return root;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
