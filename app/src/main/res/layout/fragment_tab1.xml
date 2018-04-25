@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.views.Tab1">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context="com.step.lifehuck.mvp.views.MainActivity">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/rvLifeHucks"
+            />
+        <ProgressBar
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+
+            android:id="@+id/indicator"
+            />
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Update "
+            android:layout_margin="3dp"
+            android:id="@+id/btnUpd"
+            android:layout_gravity="center"
+
+
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

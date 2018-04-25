@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Prace.ua</string>
+
+    <string name="text_activity1">Это первое Activity</string>
+    <string name="text_activity2">Это второе Activity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
